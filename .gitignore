@@ -29,3 +29,4 @@ dist/
 scratch/
 *.csv
 *.log
+.vscode
