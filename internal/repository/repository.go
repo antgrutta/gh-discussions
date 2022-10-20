@@ -91,9 +91,11 @@ func (r *Repository) getData() {
 }
 
 // Get all discussions as a slice of string slices
-func (r *Repository) DiscussionsToStrings() [][]string {
+func (r *Repository) DiscussionsToStrings(start int, end int) [][]string {
 	var result [][]string
-	for _, d := range r.Discussions {
+	discussions := r.Discussions[start:end]
+
+	for _, d := range discussions {
 		result = append(result, []string{
 			pterm.FgGreen.Sprint("#" + fmt.Sprint(d.Number)),
 			d.Title,

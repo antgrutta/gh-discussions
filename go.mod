@@ -5,9 +5,7 @@ go 1.19
 require (
 	github.com/diggs/go-backoff v0.0.0-20170517084504-f7b9f7e6b83b
 	github.com/pterm/pterm v0.12.46
-	github.com/rifflock/lfshook v0.0.0-20180920164130-b9218ef580f5
 	github.com/shurcooL/githubv4 v0.0.0-20220520033151-0b4e3294ff00
-	github.com/sirupsen/logrus v1.9.0
 	github.com/spf13/cobra v1.5.0
 	github.com/spf13/viper v1.13.0
 	golang.org/x/oauth2 v0.0.0-20220411215720-9780585627b5
