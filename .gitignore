@@ -26,6 +26,7 @@ dist/
 /gh-discussions.exe
 
 # Misc ignores
+.vscode/
 scratch/
 *.csv
 *.log

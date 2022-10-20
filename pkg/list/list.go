@@ -2,6 +2,7 @@ package list
 
 import (
 	"fmt"
+	"time"
 
 	"github.com/antgrutta/gh-discussions/internal/repository"
 	"github.com/pterm/pterm"
@@ -25,11 +26,19 @@ func ListDiscussions(repoName string) {
 	// Live ouput using area
 	area, _ := pterm.DefaultArea.WithCenter().Start()
 
-	area.Update(pterm.DefaultTable.
-		WithHasHeader(false).
-		WithSeparator("    ").
-		WithData(repo.DiscussionsToStrings()).
-		Render())
+	end := display
+
+	for i := 0; i >= len(repo.Discussions); i += display {
+		area.Update(pterm.DefaultTable.
+			WithHasHeader(false).
+			WithSeparator("    ").
+			WithData(repo.DiscussionsToStrings(i, end)).
+			Render())
+
+		end += display
+
+		time.Sleep(3 * time.Second)
+	}
 
 	area.Stop()
 }
